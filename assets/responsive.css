@@ -1,0 +1,110 @@
+@media (min-width: 1240px) {
+    .carousel.carousel-main .carousel_item:hover {
+        flex: 0 0 33.33333%;
+        min-width: 33.33333%;
+    }
+}
+
+@media (max-width: 1239px) {
+    .carousel_item:hover .carousel_img-min {
+        opacity: 1;
+        width: 100%;
+    }
+    .carousel_img-max {
+        display: none;
+    }
+    /* .carousel_item:hover:hover .comingsoon_poster-content {
+        display: none;
+    }
+    .carousel_item:hover:hover .comingsoon_poster-img-wrap::before {
+        padding-top: 124%;
+    } */
+    /* .play_area, .play_content {
+        flex-wrap: wrap;
+    }
+    .play_area-left, .play_content-left, .play_area-right, .play_content-right {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .play_area-title {
+        display: none;
+    }
+    .play_content-left {
+        padding-right: 0;
+    }
+    .play_content-info {
+        padding-bottom: 20px;
+    } */
+}
+
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+    .carousel-wrap {
+        overflow-x: auto;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    :root {
+        --header-height: 40px;
+    }
+    .modal-container {
+        padding: 20px;
+    }
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .container_title {
+        font-size: 1.6rem;
+        line-height: 2rem;
+        padding-bottom: 10px;
+    }
+    .carousel_item-title {
+        padding-top: 6px;
+    }
+    .carousel_item-title > p {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+    .carousel_img-min-overlay > span {
+        font-size: 1.1rem;
+    }
+    .container_banner {
+        background-image: url(../img/banner_mobile.jpg);
+    }
+    .carousel button {
+        display: none;
+    }
+    .carousel_rank-block {
+        height: 58px;
+    }
+    .carousel_rank-number {
+        width: 40px;
+        height: 40px;
+    }
+    .carousel_rank-title {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+    .carousel_rank-update {
+        font-size: 1rem;
+    }
+    .comingsoon_timeline-time {
+        font-size: 1.2rem;
+    }
+    .carousel-comingsoon_title {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        height: 38px;
+    }
+}

@@ -1,0 +1,396 @@
+:root {
+    --main-color: rgb(28, 199, 73);
+    --text-color: #828387;
+    --white-color: #fff;
+    --black-color: #000;
+    --golden-color: rgb(242, 191, 131);
+    --header-height: 60px;
+}
+header img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Container */
+.container {
+    padding-left: 60px;
+    padding-right: 60px;
+    position: relative;
+    z-index: 100;
+    margin-top: -15vw;
+    padding-bottom: 20px;
+    background: linear-gradient(to bottom, rgba(17,17,17,0) 0%, rgb(17,17,17,0.98) 10vw, rgba(17,17,17,1) 100%);
+}
+
+.container-section {
+    margin-bottom: 20px;
+}
+.container_title {
+    font-size: 2.2rem;
+    color: var(--white-color);
+    line-height: 3rem;
+    font-weight: 600;
+    padding-bottom: 16px;
+}
+.carousel {
+    position: relative;
+}
+.carousel-wrap {
+    overflow: hidden;
+}
+.carousel-wrap::-webkit-scrollbar {
+    display: none;
+}
+.carousel-move {
+    flex-wrap: nowrap !important;
+    margin: 0 !important;
+    transition: all ease 0.5s;
+}
+.carousel_item {
+    position: relative;
+    cursor: pointer;
+}
+.carousel_item-images {
+    position: relative;
+}
+.carousel_item:hover .carousel_img-min {
+    opacity: 0;
+    width: calc(50% - 8px);
+}
+.carousel_img-min::before {
+    content: '';
+    display: block;
+    padding-top: 132%;
+}
+.carousel_img-min {
+    position: relative;
+    border-radius: 4px;
+}
+.carousel_img-min > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 4px;
+}
+.carousel_img-max {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 4px;
+    transition: all ease 0.8s;
+}
+.carousel_item:hover .carousel_img-max {
+    opacity: 1;
+}
+.carousel_img-max > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.carousel_img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 30%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 8px;
+}
+.carousel_img-overlay > span {
+    color: var(--white-color);
+    font-size: 1.4rem;
+}
+.carousel_img-overlay > span > span {
+    color: rgb(204, 204, 204);
+}
+.carousel_img-min-overlay > span {
+    font-size: 1.2rem;
+}
+.carousel_img-max-overlay > span {
+    max-width: calc(100% - 75px);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.carousel_item-title {
+    padding-top: 10px;
+    height: 50px;
+}
+.carousel_item-title > p {
+    color: var(--white-color);
+    opacity: 0.8;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.carousel_item:hover .carousel_item-title > p {
+    color: var(--main-color);
+}
+.carousel button {
+    position: absolute;
+    top: 36%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--white-color);
+    opacity: 0.5;
+    padding: 12px 6px;
+}
+.carousel button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.carousel button > i {
+    font-size: 2.6rem;
+}
+.carousel_btn-prev {
+    left: -30px;
+}
+.carousel_btn-next {
+    right: -30px;
+}
+
+
+/* Rank */
+.carousel-rank .carousel_item {
+    border-radius: 4px;
+    transform: scale(0.96);
+    transition: all 0.3s ease;
+    padding: 0 2px;
+}
+.carousel-rank .carousel_item:hover {
+    transform: scale(1);
+}
+.carousel_rank-img {
+    position: relative;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.carousel_rank-img::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+}
+.carousel_rank-img > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.carousel_rank-overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.3) 20%, rgba(0,0,0,0) 45%);
+    opacity: 0;
+}
+.carousel_item:hover .carousel_rank-overlay {
+    opacity: 1;
+}
+.carousel_rank-block {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(33, 35, 43);
+    padding-right: 10px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.carousel_rank-number {
+    width: 56px;
+    height: 56px;
+    margin-right: 4px;
+}
+.carousel_rank-title {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: var(--white-color);
+    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.carousel_item:hover .carousel_rank-title {
+    color: var(--main-color);
+}
+.carousel_rank-update {
+    font-size: 1.2rem;
+    color: #999;
+}
+
+/* Coming soon */
+.carousel-comingsoon button {
+    top: 50%;
+}
+.carousel-comingsoon .carousel_item {
+    padding: 0;
+}
+.carousel_item:hover .comingsoon_timeline-point {
+    background-color: var(--main-color);
+}
+.carousel_item:hover .comingsoon_timeline-date,
+.carousel_item:hover .comingsoon_timeline-day {
+    color: var(--main-color);
+}
+.carousel-comingsoon_timeline {
+    position: relative;
+    margin: 6px 0 12px;
+}
+.comingsoon_timeline-line {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(45, 47, 52);
+}
+.comingsoon_timeline-point {
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(130, 131, 135);
+}
+.comingsoon_timeline-time {
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 10px;
+}
+.comingsoon_timeline-date {
+    color: rgb(188, 189, 190);
+}
+.comingsoon_timeline-day {
+    color: rgb(130, 131, 135);
+}
+.carousel-comingsoon_poster {
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 8px;
+}
+.carousel_item:hover:hover .comingsoon_poster-img-wrap::before{
+    padding-top: calc(124% - 174px);
+}
+.comingsoon_poster-img-wrap {
+    position: relative;
+}
+.comingsoon_poster-img-wrap::before {
+    content: '';
+    display: block;
+    padding-top: 124%;
+}
+.comingsoon_poster-img-wrap > img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+.carousel_item:hover:hover .comingsoon_poster-img-overlay {
+    opacity: 1;
+}
+.comingsoon_poster-img-overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(128, 15, 15, 0.4) 20%, rgba(0,0,0,0) 45%);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+.carousel_item:hover:hover .comingsoon_poster-content {
+    display: block;
+}
+.comingsoon_poster-content {
+    display: none;
+    background-color: #171717;
+    color: var(--white-color);
+    padding: 14px 12px;
+}
+.comingsoon_poster-title {
+    font-size: 1.4rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.comingsoon_poster-hagtag {
+    font-size: 1.2rem;
+    margin: 12px 0 10px;
+}
+.comingsoon_poster-hagtag span {
+    border-radius: 3px;
+    background-color: #333;
+    padding: 2px 4px;
+    margin-right: 4px;
+}
+.comingsoon_poster-info {
+    font-size: 1.2rem;
+}
+.comingsoon_poster-info p {
+    padding: 2px 0;
+}
+.comingsoon_poster-info p:nth-child(3) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.comingsoon_poster-info span {
+    color: #bbb;
+}
+.carousel_item:hover .carousel-comingsoon_title {
+    color: var(--main-color);
+}
+.carousel-comingsoon_title {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: var(--white-color);
+    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding-top: 5px;
+    height: 50px;
+    margin: 0 8px;
+}
